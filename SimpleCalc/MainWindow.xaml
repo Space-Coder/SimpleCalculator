@@ -1,0 +1,67 @@
+﻿<metro:MetroWindow x:Class="SimpleCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:SimpleCalc"
+        mc:Ignorable="d"
+                   ShowTitleBar="True"
+                   WindowTitleBrush="Transparent"
+                   TitleCharacterCasing="Normal"
+                   Background="{DynamicResource Theme}"
+                   TitleForeground="{DynamicResource ThemeForeground}"
+                   GlowBrush="#FF656D"
+                   NonActiveGlowBrush="DarkGray"
+        ResizeMode="NoResize"
+        Title="Calculator" Height="408" Width="292">
+    <metro:MetroWindow.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Change app theme" Click="ChangeAppTheme_Click"/>
+        </ContextMenu>
+    </metro:MetroWindow.ContextMenu>
+    <Grid>
+        <Grid Margin="0,56,0,0" Height="315" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="63"/>
+                <RowDefinition Height="63"/>
+                <RowDefinition Height="63"/>
+                <RowDefinition Height="63"/>
+                <RowDefinition Height="63"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="58"/>
+                <ColumnDefinition Width="58"/>
+                <ColumnDefinition Width="58"/>
+                <ColumnDefinition Width="58"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="bgGrid" Background="{DynamicResource Theme2}" Grid.ColumnSpan="6" Grid.RowSpan="6" Margin="0,0,0,-23"/>
+            <Button x:Name="ClearBtn" Style="{DynamicResource SpecialButtons}" Content="C" Grid.Column="1" Margin="6,9,6,9" Click="ClearBtn_Click"/>
+            <Button x:Name="PercentBtn" Tag="pow" Style="{DynamicResource SpecialButtons}" Content="x^2" Click="Operations" Grid.Column="2" Margin="6,9,6,9"/>
+            <Button x:Name="DivideBtn" Tag="divide" Style="{DynamicResource SpecialButtons}" Content="/" Click="Operations" Grid.Column="3" Margin="6,9,6,9">
+                
+            </Button>
+            <Button x:Name="NumBtn1" Tag="1" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="1"  Grid.Column="1" Margin="6,9,6,9" Grid.Row="1"/>
+            <Button x:Name="NumBtn2" Tag="2" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="2"  Grid.Column="2" Margin="6,9,6,9" Grid.Row="1"/>
+            <Button x:Name="NumBtn3" Tag="3" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="3"  Grid.Column="3" Margin="6,9,6,9" Grid.Row="1"/>
+            <Button x:Name="MultiplyBtn" Tag="multiply" Style="{DynamicResource SpecialButtons}" Content="X" Click="Operations" Grid.Column="4" Margin="6,9,6,9" Grid.Row="1"/>
+            <Button x:Name="NumBtn4" Tag="4" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="4"  Grid.Column="1" Margin="6,9,6,9" Grid.Row="2"/>
+            <Button x:Name="NumBtn5" Tag="5" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="5"  Grid.Column="2" Margin="6,9,6,9" Grid.Row="2"/>
+            <Button x:Name="NumBtn6" Tag="6" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="6"  Grid.Column="3" Margin="6,9,6,9" Grid.Row="2"/>
+            <Button x:Name="MinusBtn" Tag="minus" Style="{DynamicResource SpecialButtons}" Content="-" Click="Operations" Grid.Column="4" Margin="6,9,6,9" Grid.Row="2"/>
+            <Button x:Name="NumBtn7" Tag="7" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="7" Grid.Column="1" Margin="6,9,6,9" Grid.Row="3"/>
+            <Button x:Name="NumBtn8" Tag="8" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="8" Grid.Column="2" Margin="6,9,6,9" Grid.Row="3"/>
+            <Button x:Name="NumBtn9" Tag="9" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="9" Grid.Column="3" Margin="6,9,6,9" Grid.Row="3"/>
+            <Button x:Name="PlusBtn" Tag="plus" Style="{DynamicResource SpecialButtons}" Content="+" Click="Operations" Grid.Column="4" Margin="6,9,6,9" Grid.Row="3"/>
+            <Button x:Name="NumBtn0" Tag="0" Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="0" Grid.Column="1" Margin="6,9,6,9" Grid.Row="4"/>
+            <Button x:Name="NumBtnDot" Tag="." Style="{DynamicResource NumericButtons}" Click="NumBtn_Click" Content="."  Grid.Column="2" Margin="6,9,6,9" Grid.Row="4"/>
+            <Button x:Name="EqualBtn" Style="{DynamicResource EqualButton}" Content="=" Click="EqualBtn_Click" Grid.Column="3" Margin="6,9,6,9" Grid.Row="4" Grid.ColumnSpan="2"/>
+            <Button x:Name="DelBtn" Style="{DynamicResource SpecialButtons}" Content="Del" Grid.Column="4" Margin="6,9,6,9" Click="DelBtn_Click"/>
+        </Grid>
+        <TextBox x:Name="Display" BorderThickness="0" IsReadOnly="True" Background="Transparent" Foreground="{DynamicResource SpecialBtnForeground}" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontFamily="Roboto" FontSize="26" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="56"/>
+
+    </Grid>
+</metro:MetroWindow>
